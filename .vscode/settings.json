@@ -1,0 +1,77 @@
+{
+    "commit-message-editor.staticTemplate": [
+        "feat: Short description",
+        "",
+        "Message body",
+        "",
+        "Message footer"
+    ],
+    "commit-message-editor.dynamicTemplate": [
+        "{type}{scope}: {subject}"
+    ],
+    "commit-message-editor.tokens": [
+        {
+            "label": "Type",
+            "name": "type",
+            "type": "enum",
+            "description": "Type of changes",
+            "options": [
+                {
+                    "label": "chore",
+                    "description": "Updating grunt tasks etc; no production code change"
+                },
+                {
+                    "label": "docs",
+                    "description": "Documentation only changes"
+                },
+                {
+                    "label": "feat",
+                    "description": "A new feature"
+                },
+                {
+                    "label": "fix",
+                    "description": "A bug fix"
+                },
+                {
+                    "label": "refactor",
+                    "description": "A code change that neither fixes a bug nor adds a feature"
+                },
+                {
+                    "label": "style",
+                    "description": "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"
+                }
+            ]
+        },
+        {
+            "label": "Scope",
+            "name": "scope",
+            "type": "enum",
+            "prefix": "(",
+            "suffix": ")",
+            "multiple": true,
+            "separator": ",",
+            "options": [
+                {
+                    "label": "Dialog",
+                    "value": "dialog",
+                    "description": ""
+                },
+                {
+                    "label": "Logos",
+                    "value": "logos",
+                    "description": ""
+                },
+                {
+                    "label": "Settings",
+                    "value": "settings",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "label": "Subject",
+            "name": "subject",
+            "type": "text"
+        }
+    ]
+}

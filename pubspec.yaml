@@ -1,0 +1,41 @@
+name: color_settings
+description: A new Flutter project.
+version: 1.0.0
+
+publish_to: none
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dependencies:
+  # Flutter
+  flutter:
+    sdk: flutter
+
+  # Color Hub Remote
+  # color_ui:
+  #   git:
+  #     url: https://github.com/color-hub/color_ui.git
+  #     ref: 2.3.1
+
+  # Color Hub Local
+  color_ui:
+    path: ../color_ui
+
+  # Utils
+  cached_network_image: ^3.2.0
+  easy_localization: ^3.0.0
+ 
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 2.0.1
+  build_runner: ^2.2.0
+  dart_code_metrics: ^5.0.1
+
+flutter:
+  fonts:
+    - family: Monoton
+      fonts:
+        - asset: assets/fonts/Monoton-Regular.ttf
