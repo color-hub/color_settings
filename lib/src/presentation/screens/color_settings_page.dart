@@ -1,3 +1,9 @@
+import 'package:color_settings/src/models/settings_card.dart';
+import 'package:color_settings/src/models/settings_item.dart';
+import 'package:color_settings/src/models/settings_view.dart';
+import 'package:color_settings/src/presentation/components/settings_card_widget.dart';
+import 'package:color_settings/src/presentation/components/settings_item_widget.dart';
+import 'package:color_settings/src/presentation/components/settings_profile_item_widget.dart';
 import 'package:color_ui/color_ui.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
@@ -50,7 +56,6 @@ class _ColorSettingsPageState extends State<ColorSettingsPage> {
       body: TwoPanePage(
         controller: controller,
         duration: Duration.zero,
-        //TODO заменить на ListView
         firstPane: ListView(
           padding: const EdgeInsets.fromLTRB(5, 0, 5, 35),
           children: List.generate(
@@ -89,7 +94,7 @@ class _ColorSettingsPageState extends State<ColorSettingsPage> {
         if (items[index].profileItem) {
           return Visibility(
             visible: visible,
-            child: ProfileSettingsItemWidget(
+            child: SettingsProfileItemWidget(
               isSelected:
                   Responsive.isDesktop(context) ? _currentIndex == items[index].index : false,
               item: items[index],

@@ -25,7 +25,10 @@ dependencies:
   # Utils
   cached_network_image: ^3.2.0
   easy_localization: ^3.0.0
- 
+  url_launcher: ^6.0.20
+
+  # UI
+  font_awesome_flutter: ^10.3.0
 
 dev_dependencies:
   flutter_test:
