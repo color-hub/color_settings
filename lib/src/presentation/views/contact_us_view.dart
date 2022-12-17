@@ -20,7 +20,7 @@ class ContactUsView extends SettingsView {
       useRootNavigator: true,
       context: context,
       builder: (context) => ColorModal(
-        title: 'Связь с нами',
+        title: 'contactUsTitle'.tr(),
         content: this,
       ),
     );
@@ -31,9 +31,9 @@ class ContactUsView extends SettingsView {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const Align(
+        Align(
           alignment: Alignment.topLeft,
-          child: SettingsViewTitle(title: 'Связь с нами'),
+          child: SettingsViewTitle(title: 'Связь с нами'.tr()),
         ),
         const Text(
           'Возникли вопросы? Можете связаться с нами любым удобным для вас способом:',
