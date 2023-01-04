@@ -46,13 +46,19 @@ class _ColorSettingsPageState extends State<ColorSettingsPage> {
     int secondFlex = widget.isAlert ? 3 : 2;
 
     return Scaffold(
-      appBar: Responsive.isMobile(context)
-          ? AppBar(
-              automaticallyImplyLeading: widget.automaticallyImplyLeading,
-              backgroundColor: Colors.transparent,
-              title: GradientTitle(title: 'settingsPageTitle'.tr()),
-            )
-          : null,
+      appBar: AppBar(
+        automaticallyImplyLeading: widget.automaticallyImplyLeading,
+        backgroundColor: Colors.transparent,
+        title: GradientTitle(title: 'settingsPageTitle'.tr()),
+        actions: [
+          IconButton(
+            onPressed: onPressedCloseBackButton,
+            icon: Icon(controller.selectedPane == PaneState.first
+                ? Icons.close_rounded
+                : Icons.arrow_back_rounded),
+          ),
+        ],
+      ),
       body: TwoPanePage(
         controller: controller,
         duration: Duration.zero,
@@ -129,7 +135,7 @@ class _ColorSettingsPageState extends State<ColorSettingsPage> {
     }
   }
 
-  void onPressedTabletBackButton() {
+  void onPressedCloseBackButton() {
     if (selectedPane == PaneState.first) {
       Navigator.pop(context);
     } else {
