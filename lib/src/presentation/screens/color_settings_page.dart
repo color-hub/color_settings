@@ -51,12 +51,13 @@ class _ColorSettingsPageState extends State<ColorSettingsPage> {
         backgroundColor: Colors.transparent,
         title: GradientTitle(title: 'settingsPageTitle'.tr()),
         actions: [
-          IconButton(
-            onPressed: onPressedCloseBackButton,
-            icon: Icon(controller.selectedPane == PaneState.first
-                ? Icons.close_rounded
-                : Icons.arrow_back_rounded),
-          ),
+          if (!Responsive.isMobile(context))
+            IconButton(
+              onPressed: onPressedCloseBackButton,
+              icon: Icon(controller.selectedPane == PaneState.first
+                  ? Icons.close_rounded
+                  : Icons.arrow_back_rounded),
+            ),
         ],
       ),
       body: TwoPanePage(
